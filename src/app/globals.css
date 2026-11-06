@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* Same palette and fonts as the OLIVED website. */
+@theme {
+  --color-paper: #faf8f2;
+  --color-sand: #f4f0e6;
+  --color-line: #ddd7c8;
+  --color-ink: #1c1a16;
+  --color-mid: #6b6560;
+  --color-gold: #8a6d3d;
+  --color-danger: #a33a2a;
+  --color-success: #3f6b3a;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2 {
+    @apply font-display font-normal;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center bg-ink px-5 text-sm font-medium text-paper transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply border border-ink bg-transparent text-ink;
+  }
+
+  .field {
+    @apply grid gap-1.5 text-sm font-medium;
+  }
+
+  .input {
+    @apply min-h-11 w-full border border-line bg-white px-3 text-base font-normal;
+  }
+
+  .card {
+    @apply border border-line bg-white p-5;
+  }
+}
